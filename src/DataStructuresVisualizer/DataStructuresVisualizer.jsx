@@ -9,7 +9,7 @@ export default class DataStructuresVisualizer extends React.Component {
     super(props);
     this.state = {
       array: [],
-      abar: '2',
+      abar: '4',
     };
   }
 
@@ -19,7 +19,7 @@ export default class DataStructuresVisualizer extends React.Component {
 
   resetArray() {
     const array = [];
-    this.state.abar=parseInt(2);
+    this.state.abar=parseInt(4);
     if(this.refs.dsType.value==="SortedSet")
     {
       for ( let i=0;i<this.state.abar;) {
@@ -388,7 +388,7 @@ export default class DataStructuresVisualizer extends React.Component {
       });
       return;
     }
-    
+
     for ( let i=0;i<this.state.abar;i++) {
       array.push(this.state.array[i]);
       console.log(array[i]);

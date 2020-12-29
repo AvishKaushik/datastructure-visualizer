@@ -34,10 +34,10 @@ label {
 }
 
 .array-container {
-  height: 290px;
+  height: 350px;
   position: relative;
   transform: rotateX(180deg);
-  margin-bottom: 290px;
+  margin-bottom: 320px;
 }
 
 .array-bar {
