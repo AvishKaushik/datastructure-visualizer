@@ -388,6 +388,7 @@ export default class DataStructuresVisualizer extends React.Component {
       });
       return;
     }
+    
     for ( let i=0;i<this.state.abar;i++) {
       array.push(this.state.array[i]);
       console.log(array[i]);
@@ -455,7 +456,7 @@ export default class DataStructuresVisualizer extends React.Component {
       this.addValueSortedSet();
     }
   }
-  
+
 render() {
   const {array} = this.state;
 
