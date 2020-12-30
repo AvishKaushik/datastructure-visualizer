@@ -9,7 +9,7 @@ class Notification {
    * @since June 2018
    * @description Build the notification singleton handler that will handle all incoming Notifications
    * @param {object} [options] - The notification handler global options
-   * @param {string} [options.position=top-right] - <i>top-left; top-right; bottom-left; bottom-right;</i>
+   * @param {string} [options.position=bottom-right] - <i>top-left; top-right; bottom-left; bottom-right;</i>
    * @param {string} [options.thickBorder=top] - <i>top; bottom; left; right; none;</i>
    * @param {number} [options.duration=3000] - Notification life cycle duration (in ms) in range N*
    * @param {number} [options.transition=100] - Notification fade animation transition timing (in ms) in range N*
@@ -94,7 +94,7 @@ class Notification {
    * @since July 2018
    * @description Create the handler DOM element, set default values, test given options and properly add CSS class to the handler
    * @param {object} [options] - The notification handler global options
-   * @param {string} [options.position=top-right] - <i>top-left; top-right; bottom-left; bottom-right;</i>
+   * @param {string} [options.position=bottom-right] - <i>top-left; top-right; bottom-left; bottom-right;</i>
    * @param {string} [options.thickBorder=top] - <i>top; bottom; left; right; none;</i>
    * @param {number} [options.duration=3000] - Notification life cycle duration (in ms) in range N*
    * @param {number} [options.transition=100]  - Notification fade animation transition timing (in ms) in range N*
@@ -110,7 +110,7 @@ class Notification {
     // Notification.js default values
     this._default = {
       handler: {
-        position: 'top-right',
+        position: 'bottom-right',
         thickBorder: 'top',
         duration: 5000,
         transition: 200,

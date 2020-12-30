@@ -10,6 +10,7 @@ export default class DataStructuresVisualizer extends React.Component {
     this.state = {
       array: [],
       abar: '4',
+      cn: 'array-bar',
     };
   }
 
@@ -18,6 +19,25 @@ export default class DataStructuresVisualizer extends React.Component {
   }
 
   resetArray() {
+    if(this.refs.dsType.value==='LinkedList')
+    {
+      var z = document.getElementById("linkedListType");
+      z.style.display="inline";
+      if(this.refs.llType.value==='Double')
+      {
+        this.state.cn='doubly-linked-list';
+      }
+      else
+      {
+        this.state.cn='linked-list';
+      }
+    }
+    else
+    {
+      this.state.cn='array-bar';
+      var z = document.getElementById("linkedListType");
+      z.style.display="none";
+    }
     const array = [];
     this.state.abar=parseInt(4);
     if(this.refs.dsType.value==="SortedSet")
@@ -43,16 +63,15 @@ export default class DataStructuresVisualizer extends React.Component {
       }
     }
     this.setState({array});
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
+      console.log(arrayBar[i]);
       if(!arrayBar[i])
       {
         continue;
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
       }
     }
   }
@@ -68,8 +87,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Buffer Underflow',
       message: 'List is already empty',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -85,8 +104,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'No Input',
       message: 'Provide some input please',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -102,8 +121,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: '404 Not Found',
       message: 'The value to be deleted is not available',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -111,18 +130,19 @@ export default class DataStructuresVisualizer extends React.Component {
       });
       return;
     }
+    var count=0;
     for ( let i=0;i<this.state.abar;i++) {
       if(this.state.array[i]===parseInt(x))
       {
+        count++;
         continue;
       }
       array.push(this.state.array[i]);
       console.log(array[i]);
     }
-    this.state.abar=parseInt(this.state.abar)-parseInt(1);
+    this.state.abar=parseInt(this.state.abar)-parseInt(count);
     this.setState({array});
-    console.log(this.state.abar);
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
       if(!arrayBar[i])
       {
@@ -130,8 +150,8 @@ export default class DataStructuresVisualizer extends React.Component {
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
+      boStyle.backgroundColor='#ffbf00';
+      boStyle.color='#000000';
       }
     }
   }
@@ -146,8 +166,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Buffer Underflow',
       message: 'List is already empty',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -162,7 +182,7 @@ export default class DataStructuresVisualizer extends React.Component {
     this.state.abar=parseInt(this.state.abar)-parseInt(1);
     this.setState({array});
     console.log(this.state.abar);
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
       if(!arrayBar[i])
       {
@@ -170,8 +190,8 @@ export default class DataStructuresVisualizer extends React.Component {
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
+      boStyle.backgroundColor='#ffbf00';
+      boStyle.color='#000000';
       }
     }
     
@@ -181,8 +201,80 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Task Successful',
       message: 'Element Successfully Popped',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
+      iconless: false,
+      closable: false,
+      sticky: false,
+      closable: true,
+      });
+  }
+
+
+  addValueLL() {
+    const array=[];
+    var x=document.getElementById("val").value;
+    if(this.state.abar===10)
+    {
+      window.notification = new Notification();
+      let instance = window.notification.new({
+      type: 'error',
+      title: 'Buffer Overflow',
+      message: 'Only 10 elements allowed',
+      duration: 2000,
+      position: 'bottom-right',
+      thickBorder: 'bottom',
+      iconless: false,
+      closable: false,
+      sticky: false,
+      closable: true,
+      });
+      return;
+    }
+    else if(x=="")
+    {
+      window.notification = new Notification();
+      let instance = window.notification.new({
+      type: 'warning',
+      title: 'No Input',
+      message: 'Provide some input please',
+      duration: 2000,
+      position: 'bottom-right',
+      thickBorder: 'bottom',
+      iconless: false,
+      closable: false,
+      sticky: false,
+      closable: true,
+      });
+      return;
+    }
+    for ( let i=0;i<this.state.abar;i++) {
+      array.push(this.state.array[i]);
+      console.log(array[i]);
+    }
+    array.push(parseInt(x));
+    this.state.abar=parseInt(this.state.abar)+parseInt(1);
+    this.setState({array});
+    console.log(this.state.abar);
+    const arrayBar=document.getElementsByClassName(this.state.cn);
+    for ( let i=0;i<array.length;i++) {
+      console.log(arrayBar[i]);
+      if(!arrayBar[i])
+      {
+        continue;
+      }
+      else{
+      arrayBar[i].className='linked-list';
+      }
+    }
+    window.notification = new Notification();
+      let instance = window.notification.new({
+      type: 'success',
+      title: 'Task Successful',
+      message: 'Element Successfully Popped',
+      duration: 2000,
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -201,8 +293,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Buffer Overflow',
       message: 'Only 10 elements allowed',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -218,8 +310,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'No Input',
       message: 'Provide some input please',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -235,16 +327,15 @@ export default class DataStructuresVisualizer extends React.Component {
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
     this.setState({array});
     console.log(this.state.abar);
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
+      console.log(arrayBar[i]);
       if(!arrayBar[i])
       {
         continue;
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
       }
     }
     window.notification = new Notification();
@@ -253,8 +344,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Task Successful',
       message: 'Element Successfully Popped',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -273,8 +364,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Buffer Overflow',
       message: 'Only 10 elements allowed',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -290,8 +381,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'No Input',
       message: 'Provide some input please',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -311,8 +402,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Exists',
       message: 'The element already exist in the set',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -324,7 +415,7 @@ export default class DataStructuresVisualizer extends React.Component {
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
     this.setState({array});
     console.log(this.state.abar);
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
       if(!arrayBar[i])
       {
@@ -332,8 +423,8 @@ export default class DataStructuresVisualizer extends React.Component {
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
+      boStyle.backgroundColor='#ffbf00';
+      boStyle.color='#000000';
       }
     }
     window.notification = new Notification();
@@ -342,8 +433,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Task Successful',
       message: 'Element Successfully Popped',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -362,8 +453,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Buffer Overflow',
       message: 'Only 10 elements allowed',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -379,8 +470,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'No Input',
       message: 'Provide some input please',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -401,8 +492,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Exists',
       message: 'The element already exist in the set',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -415,7 +506,7 @@ export default class DataStructuresVisualizer extends React.Component {
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
     this.setState({array});
     console.log(this.state.abar);
-    const arrayBar=document.getElementsByClassName('array-bar');
+    const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
       if(!arrayBar[i])
       {
@@ -423,8 +514,8 @@ export default class DataStructuresVisualizer extends React.Component {
       }
       else{
       const boStyle = arrayBar[i].style;
-      boStyle.backgroundColor='rgb(12, 53, 71)';
-      boStyle.color='#e9e4e4';
+      boStyle.backgroundColor='#ffbf00';
+      boStyle.color='#000000';
       }
     }
     window.notification = new Notification();
@@ -433,8 +524,8 @@ export default class DataStructuresVisualizer extends React.Component {
       title: 'Task Successful',
       message: 'Element Successfully Popped',
       duration: 2000,
-      position: 'top-right',
-      thickBorder: 'top',
+      position: 'bottom-right',
+      thickBorder: 'bottom',
       iconless: false,
       closable: false,
       sticky: false,
@@ -442,7 +533,7 @@ export default class DataStructuresVisualizer extends React.Component {
       });
   }
 
-  addValue() {
+  push() {
     if(this.refs.dsType.value==="Array")
     {
       this.addValueArr();
@@ -454,6 +545,10 @@ export default class DataStructuresVisualizer extends React.Component {
     else if(this.refs.dsType.value==="SortedSet")
     {
       this.addValueSortedSet();
+    }
+    else if(this.refs.dsType.value==="LinkedList")
+    {
+      this.addValueArr();
     }
   }
 
@@ -468,18 +563,23 @@ render() {
     <option value="Array">Array</option>
     <option value="UnsortedSet">Unsorted Set</option>
     <option value="SortedSet">Sorted Set</option>
+    <option value="LinkedList">Linked List</option>
     </select>
-    <input type="number" id="val" name="val"/>
-    <button onClick={()=>this.addValue()}>Add Value</button>
+    <select ref="llType" onChange={()=>this.resetArray()} id="linkedListType">
+    <option value="Single">Singly Linked List</option>
+    <option value="Double">Doubly Linked List</option>
+    </select>
     <input type="number" id="dval" name="dval"/>
     <button onClick={()=>this.deleteValue()}>Delete Value</button>
+    <input type="number" id="val" name="val"/>
+    <button onClick={()=>this.push()}>Push</button>
     <button onClick={()=>this.pop()}>Pop</button>
     <hr></hr>
     </div>
     <div className="array-container">
     {array.map((value, idx) => (
       <div
-      className="array-bar"
+      className={this.state.cn}
       key={idx}><p>{value}</p></div>
     ))}
     </div>
