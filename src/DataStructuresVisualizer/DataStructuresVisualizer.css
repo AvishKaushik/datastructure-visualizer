@@ -52,6 +52,7 @@ label {
   border: 6px solid rgb(12, 53, 71);
   margin-right: 50px;
   border-radius: 0%;
+  box-shadow: 5px 10px 10px #888888;
 }
 
 .array-bar {
@@ -70,6 +71,7 @@ label {
   border: 6px solid rgb(12, 53, 71);
   margin-right: 50px;
   border-radius: 100%;
+  box-shadow: 5px 10px 10px #888888;
 }
 
 #x {
@@ -104,6 +106,7 @@ label {
   border-right: 16px solid rgb(12, 53, 71);
   margin-right: 50px;
   border-radius: 10%;
+  box-shadow: 5px 10px 10px #888888;
 }
 
 .doubly-linked-list {
@@ -128,6 +131,7 @@ label {
   z-index: 1;
   transform-style: preserve-3d;
   border-radius: 10%;
+  box-shadow: 5px 10px 10px #888888;
 }
 
 a {
