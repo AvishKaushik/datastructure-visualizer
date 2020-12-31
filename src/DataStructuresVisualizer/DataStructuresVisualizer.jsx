@@ -1,25 +1,52 @@
-import React , {Component} from 'react';
+import React , {Component, useState, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import './DataStructuresVisualizer.css';
 import Notification from './Notification.js';
 import './notification.min.css';
+import { Container, Draggable } from 'react-smooth-dnd';
+import { applyDrag, generateItems } from './utils';
+import Xarrow from "react-xarrows";
+
+const groupStyle = {
+  margin: 'auto',
+  overflowX: 'auto',
+  // border: '1px solid #ccc'
+};
+
+var ac=[1,2,3,4];
+var sz=4;
 
 
 export default class DataStructuresVisualizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      array: [],
+      array: [1,2,3,4],
       abar: '4',
-      cn: 'array-bar',
+      cn: 'array',
+      items3: generateItems(parseInt(sz), (i) => ({ id: i, data: ac[parseInt(i)] })),
     };
   }
+
 
   componentDidMount() {
     this.resetArray();
   }
 
+  
   resetArray() {
-    if(this.refs.dsType.value==='LinkedList')
+    if(this.refs.dsType.value==='Array')
+    {
+      this.state.cn='array';
+      var z = document.getElementById("linkedListType");
+      z.style.display="none";
+      var vl=document.getElementById("x");
+      vl.style.border="10px solid #ffbf00";
+      vl.style.display="block";
+      var v2=document.getElementById("arrow");
+      v2.style.display="none";
+    }
+    else if(this.refs.dsType.value==='LinkedList')
     {
       var z = document.getElementById("linkedListType");
       z.style.display="inline";
@@ -31,12 +58,22 @@ export default class DataStructuresVisualizer extends React.Component {
       {
         this.state.cn='linked-list';
       }
+      var vl=document.getElementById("x");
+      vl.style.display="none";
+      var v2=document.getElementById("arrow");
+      v2.style.display="block";
     }
     else
     {
-      this.state.cn='array-bar';
+      this.state.cn='array';
       var z = document.getElementById("linkedListType");
       z.style.display="none";
+      var vl=document.getElementById("x");
+      vl.style.border='transparent';
+      var vl=document.getElementById("x");
+      vl.style.display="none";
+      var v2=document.getElementById("arrow");
+      v2.style.display="block";
     }
     const array = [];
     this.state.abar=parseInt(4);
@@ -62,6 +99,10 @@ export default class DataStructuresVisualizer extends React.Component {
         array.push(randomIntFromInterval(14,650));
       }
     }
+    ac=array;
+    sz=4;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
@@ -74,6 +115,8 @@ export default class DataStructuresVisualizer extends React.Component {
       const boStyle = arrayBar[i].style;
       }
     }
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
   deleteValue() {
@@ -141,6 +184,10 @@ export default class DataStructuresVisualizer extends React.Component {
       console.log(array[i]);
     }
     this.state.abar=parseInt(this.state.abar)-parseInt(count);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     const arrayBar=document.getElementsByClassName(this.state.cn);
     for ( let i=0;i<array.length;i++) {
@@ -154,6 +201,8 @@ export default class DataStructuresVisualizer extends React.Component {
       boStyle.color='#000000';
       }
     }
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
   pop() {
@@ -180,6 +229,10 @@ export default class DataStructuresVisualizer extends React.Component {
       console.log(array[i]);
     }
     this.state.abar=parseInt(this.state.abar)-parseInt(1);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     console.log(this.state.abar);
     const arrayBar=document.getElementsByClassName(this.state.cn);
@@ -208,19 +261,21 @@ export default class DataStructuresVisualizer extends React.Component {
       sticky: false,
       closable: true,
       });
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
 
   addValueLL() {
     const array=[];
     var x=document.getElementById("val").value;
-    if(this.state.abar===10)
+    if(this.state.abar===9)
     {
       window.notification = new Notification();
       let instance = window.notification.new({
       type: 'error',
       title: 'Buffer Overflow',
-      message: 'Only 10 elements allowed',
+      message: 'Only 9 elements allowed',
       duration: 2000,
       position: 'bottom-right',
       thickBorder: 'bottom',
@@ -254,6 +309,10 @@ export default class DataStructuresVisualizer extends React.Component {
     }
     array.push(parseInt(x));
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     console.log(this.state.abar);
     const arrayBar=document.getElementsByClassName(this.state.cn);
@@ -285,13 +344,13 @@ export default class DataStructuresVisualizer extends React.Component {
   addValueArr() {
     const array=[];
     var x=document.getElementById("val").value;
-    if(this.state.abar===10)
+    if(this.state.abar===9)
     {
       window.notification = new Notification();
       let instance = window.notification.new({
       type: 'error',
       title: 'Buffer Overflow',
-      message: 'Only 10 elements allowed',
+      message: 'Only 9 elements allowed',
       duration: 2000,
       position: 'bottom-right',
       thickBorder: 'bottom',
@@ -325,6 +384,10 @@ export default class DataStructuresVisualizer extends React.Component {
     }
     array.push(parseInt(x));
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     console.log(this.state.abar);
     const arrayBar=document.getElementsByClassName(this.state.cn);
@@ -351,18 +414,20 @@ export default class DataStructuresVisualizer extends React.Component {
       sticky: false,
       closable: true,
       });
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
   addValueUnsortedSet() {
     const array=[];
     var x=document.getElementById("val").value;
-    if(this.state.abar===10)
+    if(this.state.abar===9)
     {
       window.notification = new Notification();
       let instance = window.notification.new({
       type: 'error',
       title: 'Buffer Overflow',
-      message: 'Only 10 elements allowed',
+      message: 'Only 9 elements allowed',
       duration: 2000,
       position: 'bottom-right',
       thickBorder: 'bottom',
@@ -413,6 +478,10 @@ export default class DataStructuresVisualizer extends React.Component {
     }
     array.push(parseInt(x));
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     console.log(this.state.abar);
     const arrayBar=document.getElementsByClassName(this.state.cn);
@@ -440,18 +509,20 @@ export default class DataStructuresVisualizer extends React.Component {
       sticky: false,
       closable: true,
       });
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
   addValueSortedSet() {
     const array=[];
     var x=document.getElementById("val").value;
-    if(this.state.abar===10)
+    if(this.state.abar===9)
     {
       window.notification = new Notification();
       let instance = window.notification.new({
       type: 'error',
       title: 'Buffer Overflow',
-      message: 'Only 10 elements allowed',
+      message: 'Only 9 elements allowed',
       duration: 2000,
       position: 'bottom-right',
       thickBorder: 'bottom',
@@ -504,6 +575,10 @@ export default class DataStructuresVisualizer extends React.Component {
     array.push(parseInt(x));
     array.sort(function(a, b){return a-b});
     this.state.abar=parseInt(this.state.abar)+parseInt(1);
+    ac=array;
+    sz=this.state.abar;
+    var x=generateItems(parseInt(sz), (i) => ({ id: i, data: `${ac[parseInt(i)]}` }));
+    this.state.items3=x;
     this.setState({array});
     console.log(this.state.abar);
     const arrayBar=document.getElementsByClassName(this.state.cn);
@@ -531,6 +606,8 @@ export default class DataStructuresVisualizer extends React.Component {
       sticky: false,
       closable: true,
       });
+    var vl=document.getElementById("x");
+    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
   }
 
   push() {
@@ -551,6 +628,25 @@ export default class DataStructuresVisualizer extends React.Component {
       this.addValueArr();
     }
   }
+
+messageCallSet() {
+    if(this.refs.dsType.value==="SortedSet")
+    {
+      window.notification = new Notification();
+      let instance = window.notification.new({
+      type: 'warning',
+      title: 'Sorted Set',
+      message: 'Elements remain sorted in Sorted Set ',
+      duration: 2000,
+      position: 'bottom-right',
+      thickBorder: 'bottom',
+      iconless: false,
+      closable: false,
+      sticky: false,
+      closable: true,
+      });
+    }
+}
 
 render() {
   const {array} = this.state;
@@ -576,13 +672,25 @@ render() {
     <button onClick={()=>this.pop()}>Pop</button>
     <hr></hr>
     </div>
-    <div className="array-container">
+    <div className="array-container" id="x">
+  <Container id="z" groupName="1" style={groupStyle} orientation="horizontal" getChildPayload={i => this.state.items3[i]} onDrop={e => {this.setState({array: applyDrag(this.refs.dsType.value,this.state.array,this.state.items3, e)}); this.messageCallSet()}}>
     {array.map((value, idx) => (
-      <div
-      className={this.state.cn}
-      key={idx}><p>{value}</p></div>
+      <Draggable>
+        <div
+        className={this.state.cn}
+        id={idx}><p>{value}</p></div>
+      </Draggable>
+    ))}
+    </Container>
+    </div>
+    <div className="array-container" id="arrow">
+      {array.map((value, idx) => (
+        <div
+        className={this.state.cn}
+        id={idx}><p>{value}</p></div>
     ))}
     </div>
+      
     <div className="arrangement">
     <hr></hr>
     </div>
@@ -594,3 +702,5 @@ render() {
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max-min+1) + min);
 }
+
+
