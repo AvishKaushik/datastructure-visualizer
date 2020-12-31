@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/datastructure-visualizer/static/css/main.b03c2d57.chunk.css",
+    "main.css": "/datastructure-visualizer/static/css/main.e12d2b81.chunk.css",
     "main.js": "/datastructure-visualizer/static/js/main.8ade4d91.chunk.js",
     "main.js.map": "/datastructure-visualizer/static/js/main.8ade4d91.chunk.js.map",
     "runtime-main.js": "/datastructure-visualizer/static/js/runtime-main.f85aaa22.js",
@@ -10,13 +10,13 @@
     "static/js/3.f1fe02e2.chunk.js": "/datastructure-visualizer/static/js/3.f1fe02e2.chunk.js",
     "static/js/3.f1fe02e2.chunk.js.map": "/datastructure-visualizer/static/js/3.f1fe02e2.chunk.js.map",
     "index.html": "/datastructure-visualizer/index.html",
-    "static/css/main.b03c2d57.chunk.css.map": "/datastructure-visualizer/static/css/main.b03c2d57.chunk.css.map",
+    "static/css/main.e12d2b81.chunk.css.map": "/datastructure-visualizer/static/css/main.e12d2b81.chunk.css.map",
     "static/js/2.d7fbe26c.chunk.js.LICENSE.txt": "/datastructure-visualizer/static/js/2.d7fbe26c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f85aaa22.js",
     "static/js/2.d7fbe26c.chunk.js",
-    "static/css/main.b03c2d57.chunk.css",
+    "static/css/main.e12d2b81.chunk.css",
     "static/js/main.8ade4d91.chunk.js"
   ]
 }
