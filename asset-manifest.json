@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/datastructure-visualizer/static/css/main.e12d2b81.chunk.css",
-    "main.js": "/datastructure-visualizer/static/js/main.8ade4d91.chunk.js",
-    "main.js.map": "/datastructure-visualizer/static/js/main.8ade4d91.chunk.js.map",
-    "runtime-main.js": "/datastructure-visualizer/static/js/runtime-main.f85aaa22.js",
-    "runtime-main.js.map": "/datastructure-visualizer/static/js/runtime-main.f85aaa22.js.map",
-    "static/js/2.d7fbe26c.chunk.js": "/datastructure-visualizer/static/js/2.d7fbe26c.chunk.js",
-    "static/js/2.d7fbe26c.chunk.js.map": "/datastructure-visualizer/static/js/2.d7fbe26c.chunk.js.map",
-    "static/js/3.f1fe02e2.chunk.js": "/datastructure-visualizer/static/js/3.f1fe02e2.chunk.js",
-    "static/js/3.f1fe02e2.chunk.js.map": "/datastructure-visualizer/static/js/3.f1fe02e2.chunk.js.map",
+    "main.css": "/datastructure-visualizer/static/css/main.216166eb.chunk.css",
+    "main.js": "/datastructure-visualizer/static/js/main.1095f603.chunk.js",
+    "main.js.map": "/datastructure-visualizer/static/js/main.1095f603.chunk.js.map",
+    "runtime-main.js": "/datastructure-visualizer/static/js/runtime-main.ccf60c54.js",
+    "runtime-main.js.map": "/datastructure-visualizer/static/js/runtime-main.ccf60c54.js.map",
+    "static/css/2.372939f3.chunk.css": "/datastructure-visualizer/static/css/2.372939f3.chunk.css",
+    "static/js/2.4c708e1a.chunk.js": "/datastructure-visualizer/static/js/2.4c708e1a.chunk.js",
+    "static/js/2.4c708e1a.chunk.js.map": "/datastructure-visualizer/static/js/2.4c708e1a.chunk.js.map",
+    "static/js/3.4adef64a.chunk.js": "/datastructure-visualizer/static/js/3.4adef64a.chunk.js",
+    "static/js/3.4adef64a.chunk.js.map": "/datastructure-visualizer/static/js/3.4adef64a.chunk.js.map",
     "index.html": "/datastructure-visualizer/index.html",
-    "static/css/main.e12d2b81.chunk.css.map": "/datastructure-visualizer/static/css/main.e12d2b81.chunk.css.map",
-    "static/js/2.d7fbe26c.chunk.js.LICENSE.txt": "/datastructure-visualizer/static/js/2.d7fbe26c.chunk.js.LICENSE.txt"
+    "static/css/2.372939f3.chunk.css.map": "/datastructure-visualizer/static/css/2.372939f3.chunk.css.map",
+    "static/css/main.216166eb.chunk.css.map": "/datastructure-visualizer/static/css/main.216166eb.chunk.css.map",
+    "static/js/2.4c708e1a.chunk.js.LICENSE.txt": "/datastructure-visualizer/static/js/2.4c708e1a.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/datastructure-visualizer/static/media/arrow_right.0897f985.svg",
+    "static/media/all.min.css": "/datastructure-visualizer/static/media/fa-solid-900.46fdbd2d.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.f85aaa22.js",
-    "static/js/2.d7fbe26c.chunk.js",
-    "static/css/main.e12d2b81.chunk.css",
-    "static/js/main.8ade4d91.chunk.js"
+    "static/js/runtime-main.ccf60c54.js",
+    "static/css/2.372939f3.chunk.css",
+    "static/js/2.4c708e1a.chunk.js",
+    "static/css/main.216166eb.chunk.css",
+    "static/js/main.1095f603.chunk.js"
   ]
 }
