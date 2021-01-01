@@ -302,7 +302,8 @@ p {
   width: 130px;
   margin-left: 10px;
   border: 2px solid rgb(12, 53, 71);
-  height: 38px;
+  height: 37px;
+  border-radius: 0.4em;
 }
 
 #dval {
@@ -310,8 +311,10 @@ p {
   margin-left: 10px;
   border: 2px solid rgb(12, 53, 71);
   margin-top: 20px;
-  height: 38px;
+  height: 37px;
   border-radius: 1%;
+  border-radius: 0.4em;
+  margin-bottom: 10px;
 }
 
 .array > p {
