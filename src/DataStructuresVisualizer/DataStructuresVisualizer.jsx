@@ -5,7 +5,10 @@ import Notification from './Notification.js';
 import './notification.min.css';
 import { Container, Draggable } from 'react-smooth-dnd';
 import { applyDrag, generateItems } from './utils';
-import Xarrow from "react-xarrows";
+import { Button, ButtonGroup} from '@material-ui/core';
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import 'mdbreact/dist/css/mdb.css';
 
 const groupStyle = {
   margin: 'auto',
@@ -116,7 +119,7 @@ export default class DataStructuresVisualizer extends React.Component {
       }
     }
     var vl=document.getElementById("x");
-    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
+    vl.style.width=(((this.state.abar-1)*130)+142)+'px';
   }
 
   deleteValue() {
@@ -202,7 +205,7 @@ export default class DataStructuresVisualizer extends React.Component {
       }
     }
     var vl=document.getElementById("x");
-    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
+    vl.style.width=(((this.state.abar-1)*130)+142)+'px';
   }
 
   pop() {
@@ -262,7 +265,7 @@ export default class DataStructuresVisualizer extends React.Component {
       closable: true,
       });
     var vl=document.getElementById("x");
-    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
+    vl.style.width=(((this.state.abar-1)*130)+142)+'px';
   }
 
 
@@ -415,7 +418,7 @@ export default class DataStructuresVisualizer extends React.Component {
       closable: true,
       });
     var vl=document.getElementById("x");
-    vl.style.width=(((this.state.abar-1)*142)+90)+'px';
+    vl.style.width=(((this.state.abar-1)*130)+142)+'px';
   }
 
   addValueUnsortedSet() {
@@ -654,22 +657,22 @@ render() {
   return (
     <div>
     <div>
-    <button onClick={()=>this.resetArray()}>Generate a new list</button>
-    <select ref="dsType" onChange={()=>this.resetArray()}>
+    <Button onClick={()=>this.resetArray()} id="btn1">Generate a new list</Button>
+    <select  className="browser-default custom-select" id="sel1" ref="dsType" onChange={()=>this.resetArray()}>
     <option value="Array">Array</option>
     <option value="UnsortedSet">Unsorted Set</option>
     <option value="SortedSet">Sorted Set</option>
     <option value="LinkedList">Linked List</option>
     </select>
-    <select ref="llType" onChange={()=>this.resetArray()} id="linkedListType">
+    <select className="browser-default custom-select" ref="llType" onChange={()=>this.resetArray()} id="linkedListType">
     <option value="Single">Singly Linked List</option>
     <option value="Double">Doubly Linked List</option>
     </select>
     <input type="number" id="dval" name="dval"/>
-    <button onClick={()=>this.deleteValue()}>Delete Value</button>
+    <Button onClick={()=>this.deleteValue()} id="btn2">Delete Value</Button>
     <input type="number" id="val" name="val"/>
-    <button onClick={()=>this.push()}>Push</button>
-    <button onClick={()=>this.pop()}>Pop</button>
+    <Button onClick={()=>this.push()} id="btn3">Push</Button>
+    <Button onClick={()=>this.pop()} id="btn4">Pop</Button>
     <hr></hr>
     </div>
     <div className="array-container" id="x">

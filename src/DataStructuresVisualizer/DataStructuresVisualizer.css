@@ -110,7 +110,7 @@ label {
 }
 
 .doubly-linked-list {
-  width: 20px;
+  width: 30px;
   border: 0;
   border-radius: 0;
   background-color: #ffbf00;
@@ -120,8 +120,8 @@ label {
   max-height: 660px;
   color: #000000;
   font-size: 1em;
-  height: 68px;
-  width: 82px;
+  width: 106px;
+  height: 62px;
   display: inline-block;
   align-items: center;
   justify-content: center;
@@ -205,9 +205,9 @@ p {
   content: "";
   height: 2px;
   background: black;
-  width: 54px;
+  width: 50px;
   position: absolute;
-  right: 82px;
+  right: 89.6px;
   top: 38%;
   animation-name: visitedAnimationlnr;
   animation-duration: 1.5s;
@@ -306,21 +306,89 @@ p {
 @keyframes visitedAnimationlnr {
   0% {
     width: 10px;
-    right: 82px;
+    right: 89.7px;
   }
 
   100% {
-    width: 59px;
-    right: 82px;
+    width: 43px;
+    right: 89.7px;
   }
 }
 
 @keyframes visitedAnimationtrir {
   0% {
-    right: -79px;
+    right: -69px;
   }
 
   100% {
     right: -30px;
   }
+}
+
+#sel1 {
+  width: 200px;
+  margin-left: 10px;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#linkedListType {
+  width: 200px;
+  margin-left: 10px;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#btn1 {
+  width: 200px;
+  margin-left: 10px;
+  background-color: #ffbf00;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#btn2 {
+  width: 200px;
+  margin-left: 10px;
+  background-color: #ffbf00;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#btn3 {
+  width: 100px;
+  margin-left: 10px;
+  background-color: #ffbf00;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#btn4 {
+  width: 100px;
+  margin-left: 10px;
+  background-color: #ffbf00;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: -3px;
+  height: 38px;
+}
+
+#val {
+  width: 130px;
+  margin-left: 10px;
+  border: 2px solid rgb(12, 53, 71);
+  height: 38px;
+}
+
+#dval {
+  width: 130px;
+  margin-left: 10px;
+  border: 2px solid rgb(12, 53, 71);
+  margin-top: 20px;
+  height: 38px;
+  border-radius: 1%;
 }
