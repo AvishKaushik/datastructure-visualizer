@@ -1,5 +1,6 @@
 body {
   background-color: #eeecec;
+  overflow: auto;
 }
 
 button {
@@ -14,23 +15,9 @@ select {
   margin-right: 20px;
 }
 
-label {
-  margin-top: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: -12px;
-  color: white;
-  border: solid 1px white;
-}
-
-#operator {
-  margin-top: 20px;
-  align-content: center;
-}
-
 .array-container {
   position: relative;
-  margin-top: 18%;
+  margin-top: 16%;
   margin-bottom: 17%;
   margin-left: auto;
   margin-right: auto;
@@ -149,7 +136,7 @@ p {
   background: black;
   width: 55px;
   position: absolute;
-  right: -55px;
+  right: -56px;
   top: 50%;
   animation-name: visitedAnimationln;
   animation-duration: 1.5s;
@@ -205,9 +192,9 @@ p {
   content: "";
   height: 2px;
   background: black;
-  width: 50px;
+  width: 49px;
   position: absolute;
-  right: 89.6px;
+  right: 90px;
   top: 38%;
   animation-name: visitedAnimationlnr;
   animation-duration: 1.5s;
@@ -219,7 +206,7 @@ p {
   position: absolute;
   width: 0;
   height: 0;
-  top: 38.6%;
+  top: 39.2%;
   border-style: solid;
   border-width: 7px 15px 7px 0px;
   border-color: transparent black transparent transparent;
@@ -232,7 +219,7 @@ p {
 
 .doubly-linked-list:not(:last-child) p:after {
   content: "";
-  height: 2px;
+  height: 3px;
   background: black;
   width: 59px;
   position: absolute;
@@ -248,7 +235,7 @@ p {
   position: absolute;
   width: 0;
   height: 0;
-  top: 64.6%;
+  top: 66.6%;
   border-style: solid;
   border-width: 7px 0 7px 15px;
   border-color: transparent transparent transparent black;
@@ -257,72 +244,6 @@ p {
   animation-name: visitedAnimationtrix;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
-}
-
-@keyframes visitedAnimationln {
-  0% {
-    width: 10px;
-    right: -14px;
-  }
-
-  100% {
-    width: 55px;
-    right: -56px;
-  }
-}
-
-@keyframes visitedAnimationtri {
-  0% {
-    right: -30px;
-  }
-
-  100% {
-    right: -56px;
-  }
-}
-
-@keyframes visitedAnimationlnx {
-  0% {
-    width: 10px;
-    right: -10px;
-  }
-
-  100% {
-    width: 64px;
-    right: -64px;
-  }
-}
-
-@keyframes visitedAnimationtrix {
-  0% {
-    right: -20px;
-  }
-
-  100% {
-    right: -68px;
-  }
-}
-
-@keyframes visitedAnimationlnr {
-  0% {
-    width: 10px;
-    right: 89.7px;
-  }
-
-  100% {
-    width: 43px;
-    right: 89.7px;
-  }
-}
-
-@keyframes visitedAnimationtrir {
-  0% {
-    right: -69px;
-  }
-
-  100% {
-    right: -30px;
-  }
 }
 
 #sel1 {
@@ -391,4 +312,90 @@ p {
   margin-top: 20px;
   height: 38px;
   border-radius: 1%;
+}
+
+.array > p {
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-top: 24%;
+}
+
+.linked-list > p {
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-top: 28%;
+  padding-left: 10%;
+}
+
+.doubly-linked-list > p {
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-top: 20%;
+  padding-left: 4%;
+}
+
+@keyframes visitedAnimationln {
+  0% {
+    width: 10px;
+    right: -14px;
+  }
+
+  100% {
+    width: 55px;
+    right: -56px;
+  }
+}
+
+@keyframes visitedAnimationtri {
+  0% {
+    right: -30px;
+  }
+
+  100% {
+    right: -56px;
+  }
+}
+
+@keyframes visitedAnimationlnx {
+  0% {
+    width: 10px;
+    right: -10px;
+  }
+
+  100% {
+    width: 64px;
+    right: -64px;
+  }
+}
+
+@keyframes visitedAnimationtrix {
+  0% {
+    right: -20px;
+  }
+
+  100% {
+    right: -68px;
+  }
+}
+
+@keyframes visitedAnimationlnr {
+  0% {
+    width: 10px;
+    right: 89.7px;
+  }
+
+  100% {
+    width: 43px;
+    right: 89.7px;
+  }
+}
+
+@keyframes visitedAnimationtrir {
+  0% {
+    right: -69px;
+  }
+
+  100% {
+    right: -30px;
+  }
 }
