@@ -219,7 +219,7 @@ p {
 
 .doubly-linked-list:not(:last-child) p:after {
   content: "";
-  height: 3px;
+  height: 2px;
   background: black;
   width: 59px;
   position: absolute;
@@ -235,7 +235,7 @@ p {
   position: absolute;
   width: 0;
   height: 0;
-  top: 66.6%;
+  top: 65.5%;
   border-style: solid;
   border-width: 7px 0 7px 15px;
   border-color: transparent transparent transparent black;
